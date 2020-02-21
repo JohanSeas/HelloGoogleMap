@@ -22,40 +22,47 @@
       });
 
       // Create a Google Maps native view under the map_canvas div.
-      var map = plugin.google.maps.Map.getMap(div);
+      var map = plugin.google.maps.Map.getMap(div, {
+        'styles': [
+          {
+            featureType: "all",
+            stylers: [
+              { saturation: -80 }
+            ]
+          },{
+            featureType: "road.arterial",
+            elementType: "geometry",
+            stylers: [
+              { hue: "#00ffee" },
+              { saturation: 50 }
+            ]
+          },{
+            featureType: "poi.business",
+            elementType: "labels",
+            stylers: [
+              { visibility: "off" }
+            ]
+          }
+        ],
+        'camera' : {
+          target: {
+            lat: 37.422375,
+            lng: -122.084207
+          },
+          zoom: 18
+        },
+        'preferences': {
+          'zoom': {
+            'minZoom': 15,
+            'maxZoom': 18
+          },
+          'building': false
+        }
+      });
 
       // If you click the button, do something...
       var button = document.getElementById("button");
-      var customStyled = [
-        {
-        "featureType": "poi",
-        "elementType": "labels.icon",
-        "stylers": [
-          {
-            "color": "#808080"
-          }
-        ]
-      },
-      {
-        "featureType": "poi",
-        "elementType": "labels.text.fill",
-        "stylers": [
-          {
-            "color": "#808080"
-          }
-        ]
-      },
-      {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [
-          {
-            "color": "#3ba4c7"
-          }
-        ]
-      }
-    	];//(array shown above)
-    	map.set('styles',customStyled);
+      
       button.addEventListener("click", function() {
 
         // Move to the position with animation
