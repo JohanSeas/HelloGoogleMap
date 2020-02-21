@@ -23,7 +23,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-    <preference name="phonegap-version" value="cli-8.1.1" />
+    <preference name="phonegap-version" value="cli-7.1.0" />
     <preference name="android-minSdkVersion" value="19" />
     <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyAa1stPBaOabne7ldUTazCgg1ntcF1uwKk" />
     <preference name="GOOGLE_MAPS_IOS_API_KEY" value="AIzaSyAa1stPBaOabne7ldUTazCgg1ntcF1uwKk" />
